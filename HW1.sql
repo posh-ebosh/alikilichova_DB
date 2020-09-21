@@ -1,0 +1,28 @@
+CREATE TABLE `practice_904`.`students` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` INT(10) NOT NULL,
+  `group_id` INT(10) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+CREATE TABLE `practice_904`.`teachers` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `student_id` INT(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+CREATE TABLE `practice_904`.`groups` (
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(7) NOT NULL,
+  `teacher_id` INT(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
